@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\ReplyController;
+use App\Model\Reply;
 use Illuminate\Http\Request;
 
-class ReplyControllerController extends Controller
+class ReplyController extends Controller
 {
     /**
      * Display a listing of the resource.

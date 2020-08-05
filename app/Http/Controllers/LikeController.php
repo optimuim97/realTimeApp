@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Model\LikeController;
+use App\Model\Like;
 use Illuminate\Http\Request;
 
-class LikeControllerController extends Controller
+class LikeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class LikeControllerController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Model\LikeController  $likeController
+     * @param  \App\Model\Like  $like
      * @return \Illuminate\Http\Response
      */
-    public function show(LikeController $likeController)
+    public function show(Like $like)
     {
         //
     }
@@ -52,10 +52,10 @@ class LikeControllerController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Model\LikeController  $likeController
+     * @param  \App\Model\Like  $Like
      * @return \Illuminate\Http\Response
      */
-    public function edit(LikeController $likeController)
+    public function edit(Like $Like)
     {
         //
     }
@@ -64,10 +64,10 @@ class LikeControllerController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\LikeController  $likeController
+     * @param  \App\Model\Like  $Like
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, LikeController $likeController)
+    public function update(Request $request, Like $like)
     {
         //
     }
@@ -75,10 +75,10 @@ class LikeControllerController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Model\LikeController  $likeController
+     * @param  \App\Model\Like  $Like
      * @return \Illuminate\Http\Response
      */
-    public function destroy(LikeController $likeController)
+    public function destroy(Like $like)
     {
         //
     }

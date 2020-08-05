@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Question;
+use Facade\FlareClient\Http\Response;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
@@ -37,6 +38,15 @@ class QuestionController extends Controller
     public function store(Request $request)
     {
         //
+        Question::create([
+            "title"=> $request->title,
+            "slug"=> $request->slug,
+            "body"=> $request->body,
+            "category_id"=> $request->category_id,
+            "user_id"=> $request->user_id,
+        ]);
+
+        return response('Propre',Response::HTTP_CREATED);
     }
 
     /**
@@ -45,8 +55,9 @@ class QuestionController extends Controller
      * @param  \App\Model\QuestionController  $questionController
      * @return \Illuminate\Http\Response
      */
-    public function show(QuestionController $questionController)
+    public function show(Question $question)
     {
+        return $question;
         //
     }
 
@@ -56,7 +67,7 @@ class QuestionController extends Controller
      * @param  \App\Model\QuestionController  $questionController
      * @return \Illuminate\Http\Response
      */
-    public function edit(QuestionController $questionController)
+    public function edit(Question $question)
     {
         //
     }
@@ -65,12 +76,13 @@ class QuestionController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Model\QuestionController  $questionController
+     * @param  \App\Model\Question  $question
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, QuestionController $questionController)
+    public function update(Request $request, Question $question)
     {
         //
+
     }
 
     /**
@@ -79,8 +91,11 @@ class QuestionController extends Controller
      * @param  \App\Model\QuestionController  $questionController
      * @return \Illuminate\Http\Response
      */
-    public function destroy(QuestionController $questionController)
+    public function destroy(Question $question)
     {
         //
+        $question->delete();
+
+        return response("Deleted",  Response::HTTP_NO_CONTENT);
     }
 }
